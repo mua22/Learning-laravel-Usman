@@ -22,3 +22,5 @@ Route::get('/contact', function () {
 Route::get('/skills', function () {
     return view('skills');
 });
+
+Route::get('/products', 'ProductsController@index');
