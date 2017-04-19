@@ -23,10 +23,13 @@ Route::get('/skills', function () {
     return view('skills');
 });
 
-Route::get('/products', 'ProductsController@index');
+Route::get('/products',             'ProductsController@index');
+Route::get('/products/{id}/edit',   'ProductsController@edit');
+Route::put('/products/{id}',        'ProductsController@update');
+Route::get('/products/create',      'ProductsController@create');
+Route::delete('/products/{id}', 'ProductsController@destroy');
+Route::post('/products',            'ProductsController@store');
+Route::get('/products/{id}',        'ProductsController@show');
 
-Route::get('/products/create', 'ProductsController@create');
-Route::post('/products', 'ProductsController@store');
-Route::get('/products/{id}', 'ProductsController@show');
 
-Route::resource('/myproducts', 'ProductsController');
+//Route::resource('/myproducts', 'ProductsController');
