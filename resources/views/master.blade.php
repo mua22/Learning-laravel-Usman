@@ -6,7 +6,9 @@
     <!-- Latest compiled and minified CSS & JS -->
     <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-3.1.1.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    @yield('styles')
 </head>
 <body>
 
@@ -34,6 +36,7 @@
             </div>
         </div>
     </div>
+    @yield('scripts')
 </body>
 </html>
 
