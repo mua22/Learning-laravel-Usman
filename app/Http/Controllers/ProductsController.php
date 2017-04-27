@@ -40,6 +40,12 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'title'       =>  'required',
+            'description' =>  'required',
+            'price'       =>  'required|numeric',
+            'slug'        =>  'required'
+        ]);
         $product = new Product();
         $product->title = $request->title;
         $product->description = $request->description;
@@ -85,8 +91,12 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        echo 'update';
+        $this->validate($request,[
+            'title'       =>  'required',
+            'description' =>  'required',
+            'price'       =>  'required|numeric',
+            'slug'        =>  'required'
+        ]);
         $product=Product::find($id);
         $product->title=$request->title;
         $product->description=$request->description;
@@ -95,6 +105,13 @@ class ProductsController extends Controller
         $product->save();
         return redirect(url('/products/'));
 
+    }
+    public function messages()
+    {
+        return [
+            'title.required' => 'A title is required',
+            'body.required'  => 'A message is required',
+        ];
     }
 
     /**

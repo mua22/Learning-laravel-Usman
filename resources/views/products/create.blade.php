@@ -35,5 +35,18 @@
 
         <input type="submit" class="btn btn-info">
 
+        @if (count($errors) > 0)
+            <hr>
+            <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+
+
+
     </form>
 @endsection
